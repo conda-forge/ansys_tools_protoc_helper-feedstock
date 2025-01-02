@@ -1,26 +1,27 @@
 {% set name = "ansys_tools_protoc_helper" %}
 {% set version = "0.4.0" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ansys-tools-protoc-helper-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ansys-tools-protoc-helper-{{ version }}.tar.gz
   sha256: c102dc258c5328f2728648b512cbd7e6fe1db78167f4d0cdef1acf5470b63e02
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7,<3.11
+    - python {{ python_min }}
     - flit-core >=3.2,<4
     - pip
   run:
-    - python >=3.7,<3.11
+    - python >={{ python_min }},<3.11
     - setuptools >=42.0
     - grpcio-tools ==1.44.0
     - protobuf ==3.19.3
@@ -34,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/ansys-tools-protoc-helper/
