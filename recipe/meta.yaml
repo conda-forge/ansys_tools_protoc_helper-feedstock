@@ -1,5 +1,5 @@
 {% set name = "ansys_tools_protoc_helper" %}
-{% set version = "0.4.0" %}
+{% set version = "0.6.0" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -7,13 +7,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ansys-tools-protoc-helper-{{ version }}.tar.gz
-  sha256: c102dc258c5328f2728648b512cbd7e6fe1db78167f4d0cdef1acf5470b63e02
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 36875ea5f2e58aa7ec8f2999509540885b9a21782e03ede60ec0ef560b527320
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
