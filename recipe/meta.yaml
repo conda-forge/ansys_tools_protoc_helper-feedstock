@@ -23,7 +23,7 @@ requirements:
   run:
     - python >={{ python_min }},<3.15
     - setuptools >=42.0
-    - grpcio-tools ==1.71.2
+    - grpcio-tools ==1.71.0
     - protobuf ==5.29.6
     - mypy-protobuf ==3.6.0
 
