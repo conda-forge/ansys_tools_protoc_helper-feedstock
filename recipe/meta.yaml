@@ -1,6 +1,6 @@
 {% set name = "ansys_tools_protoc_helper" %}
 {% set version = "0.7.0" %}
-{% set python_min = "3.9" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -21,12 +21,11 @@ requirements:
     - flit-core >=3.2,<4
     - pip
   run:
-    - python >={{ python_min }},<3.11
+    - python >={{ python_min }},<3.15
     - setuptools >=42.0
-    - grpcio-tools ==1.44.0
-    - protobuf ==3.19.3
-    - mypy-protobuf ==3.1.0
-    - importlib-resources >=1.3
+    - grpcio-tools ==1.71.2
+    - protobuf ==5.29.6
+    - mypy-protobuf ==3.6.0
 
 test:
   imports:
